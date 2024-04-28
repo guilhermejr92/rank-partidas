@@ -1,7 +1,9 @@
-function calcularNivel() {
-    // Gerar números aleatórios para as vitórias e derrotas
-    let vitorias = Math.floor(Math.random() * 150); // Números aleatórios entre 0 e 149
-    let derrotas = Math.floor(Math.random() * 150); // Números aleatórios entre 0 e 149
+function calcularNivel(vitorias = null, derrotas = null) {
+    // Se nenhum valor for fornecido, gerar números aleatórios para as vitórias e derrotas
+    if (vitorias === null || derrotas === null) {
+        vitorias = Math.floor(Math.random() * 150); // Números aleatórios entre 0 e 149
+        derrotas = Math.floor(Math.random() * 150); // Números aleatórios entre 0 e 149
+    }
 
     let saldoVitorias = vitorias - derrotas;
     let nivel;
@@ -22,9 +24,14 @@ function calcularNivel() {
         nivel = "Imortal";
     }
 
-    return `O Herói tem de saldo de ${saldoVitorias} está no nível de ${nivel}`;
+    return `O Herói tem ${vitorias} vitórias e ${derrotas} derrotas, com saldo de ${saldoVitorias}, está no nível de ${nivel}`;
 }
 
-// Exemplo de uso da função
+// Exemplo de uso da função com valores fornecidos
+console.log(calcularNivel(85, 20)); // Saída com valores fornecidos
+console.log(calcularNivel(5, 20)); // Saída com valores fornecidos
+
+// Exemplo de uso da função sem valores fornecidos (valores aleatórios)
 console.log(calcularNivel()); // Saída aleatória
 console.log(calcularNivel()); // Saída aleatória
+
