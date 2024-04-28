@@ -31,7 +31,3 @@ function calcularNivel(vitorias = null, derrotas = null) {
 console.log(calcularNivel(85, 20)); // Saída com valores fornecidos
 console.log(calcularNivel(5, 20)); // Saída com valores fornecidos
 
-// Exemplo de uso da função sem valores fornecidos (valores aleatórios)
-console.log(calcularNivel()); // Saída aleatória
-console.log(calcularNivel()); // Saída aleatória
-
